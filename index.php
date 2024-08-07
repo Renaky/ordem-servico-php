@@ -61,6 +61,16 @@ require_once('header.php');
                                             Acessar
                                         </button>                                        
                                     </form>
+                                       
+                                    <div>
+                                        <p class=" pt-4 text-gray">Não possui cadastro?</p>
+                                       
+                                            <a class="btn btn-info btn-user btn-block" href="cad_cliente.php">Me cadastrar</a>
+                                    </button>
+                                    </div>
+                                    
+                                       
+
                                     
                                     <div class="text-center">
                                         

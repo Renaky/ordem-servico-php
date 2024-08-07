@@ -1,8 +1,7 @@
-
 <?php
 require_once('valida_session.php');
 require_once('header.php'); 
-require_once('sidebar.php'); 
+require_once('sidebar.php');
 ?>
 
 <!-- Main Content -->
@@ -78,6 +77,13 @@ require_once('sidebar.php');
 
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label>CEP</label>
+                            <input type="text" class="form-control form-control-user" id="cep" name="cep" placeholder="Digite o CEP" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
                             <label> Endereço </label>
                             <input type="text" class="form-control form-control-user"
                             id="endereco" name="endereco" value="<?php if (!empty($_SESSION['endereco'])) { echo $_SESSION['endereco'];} ?>" required>
@@ -132,9 +138,12 @@ require_once('sidebar.php');
     <!-- /.container-fluid -->
 
 </div>
+
 <!-- End of Main Content -->
-<?php
-require_once('footer.php');
-?>
+<?php require_once('footer.php'); ?>
 
+<!-- Incluir o script após o footer -->
+<script src="js/preencher-cep.js"></script>
 
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <?php
 require_once('valida_session.php');
 require_once('header.php'); 
@@ -78,6 +77,39 @@ require_once('sidebar.php');
 
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label>CEP</label>
+                            <input type="text" class="form-control form-control-user" id="cep" name="cep" placeholder="Digite o CEP" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> Endereço </label>
+                            <input type="text" class="form-control form-control-user"
+                            id="endereco" name="endereco" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label> Número </label>
+                            <input type="number" class="form-control form-control-user"
+                            id="numero" name="numero" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> Bairro </label>
+                            <input type="text" class="form-control form-control-user"
+                            id="bairro" name="bairro" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label> Cidade </label>
+                            <input type="text" class="form-control form-control-user"
+                            id="cidade" name="cidade" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
                             <label> Telefone - Ex.: (11) 91234-1234 </label>
                             <input type="tel" class="form-control form-control-user" id="telefone" name="telefone" placeholder="(xx)xxxxx-xxxx"  value="<?php if (!empty($_SESSION['telefone'])) { echo $_SESSION['telefone'];} ?>" maxlength="15" required >
                         </div>
@@ -111,4 +143,8 @@ require_once('sidebar.php');
 require_once('footer.php');
 ?>
 
+<!-- Incluir o script após o footer -->
+<script src="js/preencher-cep.js"></script>
 
+</body>
+</html>
