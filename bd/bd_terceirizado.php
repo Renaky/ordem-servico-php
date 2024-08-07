@@ -34,9 +34,9 @@ function buscaTerceirizado($email) {
     return $dados;
 }
 
-function cadastraTerceirizado($nome, $email, $telefone, $senha, $cep, $endereco, $numero, $bairro, $cidade, $status, $perfil, $data) {
+function cadastraTerceirizado($nome, $email, $telefone, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $status, $perfil, $data) {
     $conexao = conecta_bd();
-    $query = "INSERT INTO terceirizado (nome, email, telefone, senha, cep, endereco, numero, bairro, cidade, status, perfil, data) VALUES ('$nome', '$email', '$telefone', '$senha', '$cep', '$endereco', '$numero', '$bairro', '$cidade', '$status', '$perfil', '$data')";
+    $query = "INSERT INTO terceirizado (nome, email, telefone, senha, cep, endereco, numero, bairro, cidade, uf, status, perfil, data) VALUES ('$nome', '$email', '$telefone', '$senha', '$cep', '$endereco', '$numero', '$bairro', '$cidade', '$uf', '$status', '$perfil', '$data')";
 
     $resultado = mysqli_query($conexao, $query);
     $dados = mysqli_affected_rows($conexao);

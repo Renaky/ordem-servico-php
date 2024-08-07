@@ -1,17 +1,23 @@
 <?php
 session_start();
+
+require_once('valida_cep.php');
+
+
+
 $nome = $_POST["nome"];
 $senha = md5($_POST["senha"]);
-$cep = $_POST["cep"];
-$endereco = $_POST["endereco"];
 $numero = $_POST["numero"];
-$bairro = $_POST["bairro"];
-$cidade = $_POST["cidade"];
 $email = $_POST["email"];
 $telefone = $_POST["telefone"];
 $status = $_POST["status"];
+$cep = $_POST["cep"];
+$endereco = $_POST["endereco"];
+$bairro = $_POST["bairro"];
+$cidade = $_POST["cidade"];
+$uf = $_POST["uf"];
 $perfil = 3;
-$data=date("y/m/d");
+$data = date("Y-m-d");
 
 require_once ("bd/bd_terceirizado.php");
 $dados = buscaTerceirizado($email);
@@ -24,7 +30,7 @@ if($dados != 0){
 	header ("Location:cad_terceirizado.php");
 }else{
 
-	$dados = cadastraTerceirizado($nome, $email, $telefone, $senha, $cep, $endereco, $numero, $bairro, $cidade, $status, $perfil, $data);
+	$dados = cadastraTerceirizado($nome, $email, $telefone, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $status, $perfil, $data);
 
 	if($dados == 1){
 		$_SESSION['texto_sucesso'] = 'Dados adicionados com sucesso.';
@@ -36,6 +42,7 @@ if($dados != 0){
 		unset ($_SESSION['endereco']);
 		unset ($_SESSION['bairro']);
 		unset ($_SESSION['cidade']);
+		unset ($_SESSION['uf']);
 		unset ($_SESSION['telefone']);
 		header ("Location:terceirizado.php");
 	}else{
@@ -45,6 +52,7 @@ if($dados != 0){
 		$_SESSION['cep'] = $cep;
 		$_SESSION['endereco'] =$endereco;
 		$_SESSION['cidade'] = $cidade;
+		$_SESSION['uf']  = $uf;
 		$_SESSION['telefone'] = $telefone;
 		header ("Location:cad_terceirizado.php");
 	}

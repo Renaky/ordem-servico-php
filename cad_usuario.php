@@ -1,5 +1,5 @@
-
 <?php
+
 require_once('valida_session.php');
 require_once('header.php'); 
 require_once('sidebar.php'); 
@@ -63,21 +63,62 @@ require_once('sidebar.php');
                         </div>
                     </div>
                     
-
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <label> Senha </label>
-                            <input type="password" class="form-control form-control-user"
-                            id="senha" name="senha" placeholder="Senha" required>
+                            <input type="password" class="form-control form-control-user" id="senha" name="senha" placeholder="Senha" required>
                         </div>
                         <div class="col-sm-6">
                             <label> Confirmar Senha </label>
-                            <input type="password" class="form-control form-control-user"
-                            id="confirma_senha" name="confirma_senha" placeholder="Confirmar Senha"  oninput="validatepassword(this)" required>
+                            <input type="password" class="form-control form-control-user" id="confirma_senha" name="confirma_senha" placeholder="Confirmar Senha"  oninput="validatepassword(this)" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> Telefone </label>
+                            <input type="text" class="form-control form-control-user" id="telefone" name="telefone" value="<?php if (!empty($_SESSION['telefone'])) { echo $_SESSION['telefone'];} ?>"
+                            placeholder="Telefone" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label> CEP </label>
+                            <input type="text" class="form-control form-control-user" id="cep" name="cep" value="<?php if (!empty($_SESSION['cep'])) { echo $_SESSION['cep'];} ?>"
+                            placeholder="CEP" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> Endereço </label>
+                            <input type="text" class="form-control form-control-user" id="endereco" name="endereco" value="<?php if (!empty($_SESSION['endereco'])) { echo $_SESSION['endereco'];} ?>"
+                            placeholder="Endereço" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label> Número </label>
+                            <input type="text" class="form-control form-control-user" id="numero" name="numero" value="<?php if (!empty($_SESSION['numero'])) { echo $_SESSION['numero'];} ?>"
+                            placeholder="Número" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> Bairro </label>
+                            <input type="text" class="form-control form-control-user" id="bairro" name="bairro" value="<?php if (!empty($_SESSION['bairro'])) { echo $_SESSION['bairro'];} ?>"
+                            placeholder="Bairro" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label> Cidade </label>
+                            <input type="text" class="form-control form-control-user" id="cidade" name="cidade" value="<?php if (!empty($_SESSION['cidade'])) { echo $_SESSION['cidade'];} ?>"
+                            placeholder="Cidade" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <label> UF </label>
+                            <input type="text" class="form-control form-control-user" id="uf" name="uf" value="<?php if (!empty($_SESSION['uf'])) { echo $_SESSION['uf'];} ?>"
+                            placeholder="UF" required>
+                        </div>
                         <div class="col-sm-6">
                             <label> Situação </label>
                             <select class="form-control" id="status" name="status" required>
@@ -86,13 +127,12 @@ require_once('sidebar.php');
                                 <option value="2">Inativo</option>
                             </select>
                         </div>
-                        
-                    </div>                    
+                    </div>
 
                     <div class="card-footer text-muted" id="btn-form">
-                        <div class=text-right>
-                            <a title="Voltar" href="usuario.php"><button type="button" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i>&nbsp;</i>Voltar</button></a>
-                            <a title="Adicionar"><button type="submit" name="updatebtn" class="btn btn-primary uptadebtn"><i class="fa fa-user-circle">&nbsp;</i>Adicionar</button> </a>
+                        <div class="text-right">
+                            <a title="Voltar" href="usuario.php"><button type="button" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i>&nbsp;Voltar</button></a>
+                            <a title="Adicionar"><button type="submit" name="updatebtn" class="btn btn-primary updatebtn"><i class="fa fa-user-circle">&nbsp;</i>Adicionar</button> </a>
                         </div>
                     </div>
                 </form>  
@@ -107,5 +147,7 @@ require_once('sidebar.php');
 <?php
 require_once('footer.php');
 ?>
-
-
+<!-- Incluir o script após o footer -->
+<script src="js/preencher-cep.js"></script>
+</body>
+</html>

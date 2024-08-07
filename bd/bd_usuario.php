@@ -48,11 +48,11 @@ function buscaUsuario ($email){
     return $dados;
 }
 
-function cadastraUsuario ($nome,$senha,$email,$perfil,$status,$data){
+function cadastraUsuario ($nome, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $telefone, $email, $perfil, $status, $data){
    
     $conexao = conecta_bd();
 
-    $query = "Insert Into usuario(nome,senha,email,perfil,status,data) values('$nome','$senha','$email','$perfil','$status','$data')";
+    $query = "Insert Into usuario(nome, senha, email, cep, endereco, numero, bairro, cidade, uf, telefone, perfil, status, data) values('$nome','$senha','$email','$cep', '$endereco', '$numero', '$bairro', '$cidade', '$uf','$telefone,'$perfil','$status','$data')";
    
     $resultado = mysqli_query($conexao,$query);
     $dados = mysqli_affected_rows($conexao);

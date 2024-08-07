@@ -26,10 +26,11 @@ if ($dados != 0) {
     $_SESSION['numero'] = $numero;
     $_SESSION['bairro'] = $bairro;
     $_SESSION['cidade'] = $cidade;
+	$_SESSION['uf'] = $uf;
     $_SESSION['telefone'] = $telefone;
     header("Location: cad_cliente.php");
 } else {
-    $dados = cadastraCliente($nome, $email, $senha, $cep, $endereco, $numero, $bairro, $cidade, $telefone, $status, $perfil, $data);
+    $dados = cadastraCliente($nome, $email, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $telefone, $status, $perfil, $data);
 
     if ($dados == 1) {
         $_SESSION['texto_sucesso'] = 'Dados adicionados com sucesso.';
@@ -41,7 +42,8 @@ if ($dados != 0) {
         unset($_SESSION['endereco']);
         unset($_SESSION['numero']);
         unset($_SESSION['bairro']);
-        unset($_SESSION['cidade']);
+		unset($_SESSION['cidade']);
+        unset($_SESSION['uf']);
         unset($_SESSION['telefone']);
         header("Location: cliente.php");
     } else {
@@ -53,8 +55,9 @@ if ($dados != 0) {
         $_SESSION['numero'] = $numero;
         $_SESSION['bairro'] = $bairro;
         $_SESSION['cidade'] = $cidade;
+		$_SESSION['uf'] = $uf;
         $_SESSION['telefone'] = $telefone;
         header("Location: cad_cliente.php");
-    }
+    }					
 }
 ?>
